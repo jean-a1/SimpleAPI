@@ -32,9 +32,7 @@ def make_public_task(task):
     return new_task
 
 
-# @app.route('/todo/api/v1.0/tasks', methods=['GET'])
-# def get_tasks():
-#     return jsonify({'tasks': tasks})
+
 
 
 @app.route('/todo/api/v1.0/tasks/<int:task_id>', methods=['GET'])
@@ -116,6 +114,13 @@ def get_chuck_norris_joke():
         message = "Status Code: " + response.status_code
         #print(message)
         return jsonify({'error_message':message})
+
+
+@app.route('/')
+def hello():
+    """Return a friendly HTTP greeting."""
+    return 'Hello World!'
+
 
 if __name__ == '__main__':
     app.run(debug=True)
