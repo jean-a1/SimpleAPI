@@ -25,6 +25,12 @@ def get_chuck_norris_joke():
         return jsonify({'error_message':message})
 
 
+@app.route('/')
+def hello():
+    """Return a friendly HTTP greeting."""
+    return 'Hello World!'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
